@@ -21,41 +21,8 @@ io.on('connection', (socket) => {
 	io.sockets.in('gameroom').emit('connectToRoom', "You are in the gameroom");
 	}
 	
-    socket.on('right', function (data) {
-		socket.broadcast.emit('right', data);
-		console.log('right is being broadcasted');
-	});
-	
-	socket.on('left', function (data) {
-		socket.broadcast.emit('left', data);
-		console.log('left is being broadcasted');
-	});
-	
-	socket.on('explode', function (data) {
-		socket.broadcast.emit('explode', data);
-		console.log('explode is being broadcasted');
-	});
-	
-	socket.on('implode', function (data) {
-		socket.broadcast.emit('implode', data);
-		console.log('implode is being broadcasted');
-	});
-	
-	socket.on('blok', function (data) {
-		socket.broadcast.emit('blok', data);
-		console.log('blok is being broadcasted');
-	});
-	
-	socket.on('reader', function (data) {
-		socket.broadcast.emit('reader', data);
-		console.log('reader is being broadcasted');
-	});
-	
-	socket.on('color', function (data) {
-		socket.broadcast.emit('color', data);
-		console.log('color is being broadcasted');
-	});
-
+    
+		  
     socket.on('disconnect', function () {
         console.log('disconnect.');
 		leaverooms();
