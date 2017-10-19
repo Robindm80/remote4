@@ -1,6 +1,5 @@
-var app = require('express')();
 var http = require('http');
-var io = require('socket.io')(http);
+var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
     fs.readFile('./index.html', 'utf-8', function(error, content) {
@@ -8,6 +7,8 @@ var server = http.createServer(function(req, res) {
         res.end(content);
     });
 });
+
+var io = require('socket.io').listen(server, { log: false });
 server.listen(process.env.PORT);
 
 
